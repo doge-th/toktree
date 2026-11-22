@@ -1,0 +1,37 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "toktree"
+version = "0.1.0"
+description = "du for your LLM context window — token cost per file/directory, and whether it fits 128k/200k/1M"
+readme = "README.md"
+requires-python = ">=3.9"
+license = "MIT"
+keywords = ["tokens", "llm", "context-window", "cli", "tokenizer", "agent", "prompt", "developer-tools"]
+authors = [{ name = "doge-th" }]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Environment :: Console",
+    "Intended Audience :: Developers",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Software Development",
+    "Topic :: Utilities",
+]
+
+[project.scripts]
+toktree = "toktree.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/doge-th/toktree"
+Issues = "https://github.com/doge-th/toktree/issues"
+
+[tool.setuptools]
+packages = ["toktree"]
