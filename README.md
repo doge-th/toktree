@@ -135,6 +135,7 @@ toktree . --json          # 机器可读输出
 
 - [githotspot](https://github.com/doge-th/githotspot) — churn × complexity hotspots in your git history
 - [todomold](https://github.com/doge-th/todomold) — your oldest TODOs, with who wrote them and how long they've rotted
+- [csvpulse](https://github.com/doge-th/csvpulse) — take the pulse of a CSV file in one command
 - [awakehours](https://github.com/doge-th/awakehours) — find the hours when your whole team is actually awake
 
 ## Development
