@@ -131,6 +131,11 @@ toktree . --json          # 机器可读输出
 零依赖、离线可用;装上 `tiktoken` 后加 `--estimator tiktoken` 可以拿到精确
 的 cl100k_base 计数。启发式估算误差一般在 ±20% 以内,做预算完全够用。
 
+## Related tools
+
+- [githotspot](https://github.com/doge-th/githotspot) — churn × complexity hotspots in your git history
+- [todomold](https://github.com/doge-th/todomold) — your oldest TODOs, with who wrote them and how long they've rotted
+
 ## Development
 
 ```bash
