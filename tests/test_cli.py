@@ -53,6 +53,12 @@ class TestCli(unittest.TestCase):
         doc = json.loads(out)
         self.assertEqual(doc["files"], 1)
 
+    def test_single_nested_file_mode(self):
+        _, out, _ = self._run(["--json", str(self.sub / "c.py")])
+        doc = json.loads(out)
+        self.assertEqual(doc["files"], 1)
+        self.assertEqual(doc["all_files"][0]["path"], "c.py")
+
     def test_missing_path_fails_cleanly(self):
         code, _, err = self._run(["/nonexistent/definitely-missing"])
         self.assertEqual(code, 1)

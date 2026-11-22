@@ -78,10 +78,13 @@ def main(argv=None) -> int:
             print(f"toktree: no such file or directory: {raw}", file=sys.stderr)
             failed = True
             continue
-        res = scan(root if root.is_dir() else root.parent, estimator,
-                   opts.exclude or [], opts.no_ignore)
+        base = root if root.is_dir() else root.parent
+        res = scan(base, estimator, opts.exclude or [], opts.no_ignore)
         if root.is_file():
-            res.files = [f for f in res.files if f.path == root.name]
+            # keep only the requested file, addressed relative to its parent
+            rel = root.relative_to(base).as_posix()
+            res.root = str(root)
+            res.files = [f for f in res.files if f.path == rel]
             res.total_tokens = sum(f.tokens for f in res.files)
             res.total_size = sum(f.size for f in res.files)
         print(renderer(res, opts, models))
